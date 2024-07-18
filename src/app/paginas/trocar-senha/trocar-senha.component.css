@@ -12,19 +12,19 @@ h2 {
     background-color: #FAC649;
     color: white;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1rem;
     border-radius: 8px;
     width: 419px;
     height: 48px;
-    margin-bottom: 16px;
+    margin-bottom: 1rem;
 }
 
 .btn-voltar {
-    background-color: white;
+    background-color: #FBFBFC;
     color: black;
     border: none;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 1rem;
     width: 419px;
     height: 48px;
 }
@@ -37,5 +37,29 @@ input {
 }
 
 label {
-    font-size: 16px;
+    font-size: 1rem;
+}
+
+.quadrado {
+    width: 56px;
+    height: 48px;
+    border-radius: 8px;
+    border-color: #9B9B9B;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    text-align: center;
+}
+
+.renviar-codigo {
+    font-size: 1rem;
+    color: #005FAE;
+    font-weight: bold;
+}
+
+.col {
+    flex: 0 0 30%;
+}
+
+.espacamento-img{
+    margin-right: 1rem;
 }
