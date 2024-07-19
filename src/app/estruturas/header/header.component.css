@@ -1,0 +1,79 @@
+* {
+    user-select: none;
+}
+
+.navbar-light{
+    background-color: #FBFBFC;
+}
+
+.dropdown:hover>.dropdown-menu {
+    display: block;
+}
+
+a {
+    font-size: 1.125rem;
+    color: #504B4B;
+}
+
+.foto-usuario {
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    margin-right: 40px;
+    margin-left: 24px;
+    border: 2px solid #448169;
+}
+
+.logo-empresa{
+    margin-left: 24px;
+}
+
+li {
+    margin-left: 24px;
+}
+
+
+.dropdown-menu {
+    right: 0; 
+    left: auto; 
+    position: absolute; /*Coloquei ele absolution pra ele ficar encima de qualquer objeto, era oq estava atrabalhando usar o dropdown-menu-right -- LEMBRAR*/
+}
+
+.dropdown-toggle::after {
+    display: none; 
+}
+
+.seta-dropdown {
+    margin-left: 4px;
+}
+
+
+.profile-img {
+    position: relative;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: url(../../../../public/assets/gato.jpg);
+    background-size: cover;
+    border: 2px solid #448169;
+    margin-right: 40px;
+    margin-left: 24px;
+}
+
+.seta {
+    position: absolute;
+    bottom: -0.2rem;
+    right: -0.2rem;  
+    width: 1.3rem; 
+    height: 1.3rem; 
+    
+}
+
+.profile-dropdown-list{
+    display: none;
+}
+
+
+
+
+

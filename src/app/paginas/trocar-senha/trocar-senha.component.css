@@ -67,3 +67,8 @@ label {
 .margem-lateral{
     margin-left: 8rem;
 }
+
+.email{
+    font-size: 20px;
+    font-weight: bold;
+}

@@ -44,3 +44,8 @@ label {
     margin-left: 8rem;
 }
 
+.login-image {
+    max-height: 100vh; /* Limita a altura da imagem para evitar rolagem */
+    object-fit: cover; /* Mantém a proporção da imagem */
+  }
+

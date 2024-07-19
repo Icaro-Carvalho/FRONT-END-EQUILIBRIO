@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-trocar-senha',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './trocar-senha.component.html',
   styleUrl: './trocar-senha.component.css'
 })
@@ -14,10 +14,12 @@ import { FormsModule } from '@angular/forms';
 export class TrocarSenhaComponent {
 
   tipoTemplate: number = 0
-  
+  email: String 
+
   mudarTipoTemplate(tipo: number) {
     this.tipoTemplate = tipo;
   }
+
 
 
 }

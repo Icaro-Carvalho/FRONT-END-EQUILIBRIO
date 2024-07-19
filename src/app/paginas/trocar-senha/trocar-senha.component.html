@@ -1,17 +1,17 @@
 <div class="container">
 
     <div class="row min-vh-100 d-flex justify-content-start align-items-center margem-lateral">
-        <div class="col-md-7 col-lg-5">
+        <div class="col-md-7">
             <h2 *ngIf="tipoTemplate != 2">Esqueci minha senha😿</h2>
             <h2 *ngIf="tipoTemplate === 2">Crie sua nova senha😸</h2>
             <p class="semi-titulo" *ngIf="tipoTemplate != 1">Lorem ipsum dolor sit amet consectetur.</p>
-            <p class="semi-titulo col-md-7" *ngIf="tipoTemplate === 1">Informe o código para a verificação do e-mail: icaropcemail.com</p>
+            <p class="semi-titulo col-md-7" *ngIf="tipoTemplate === 1">Informe o código para a verificação do e-mail: <span class="email">{{this.email}}</span></p> 
 
             <ng-container *ngIf="tipoTemplate === 0">
                 <form>
                     <div class="form-group">
                       <label for="email">E-mail</label>
-                      <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp"
+                      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" aria-describedby="emailHelp"
                         placeholder="Digite seu email">
                     </div>         
                     <button type="button" class="btn" (click)="mudarTipoTemplate(1)">ENVIAR</button>
@@ -22,10 +22,10 @@
             <ng-container *ngIf="tipoTemplate === 1">
                 
                     <div class="d-flex justify-content-center col-md-7">
-                        <input type="text" class="quadrado" maxlength="1" placeholder="0">
-                        <input type="text" class="quadrado" maxlength="1" placeholder="0">
-                        <input type="text" class="quadrado" maxlength="1" placeholder="0">
-                        <input type="text" class="quadrado" maxlength="1" placeholder="0">
+                        <input type="text" class="quadrado" #input1 maxlength="1" placeholder="0">
+                        <input type="text" class="quadrado" #input2 maxlength="1" placeholder="0">
+                        <input type="text" class="quadrado" #input3 maxlength="1" placeholder="0">
+                        <input type="text" class="quadrado" #input4 maxlength="1" placeholder="0">
                     </div>
                     <div class="d-flex justify-content-center col-md-7">
                         <p class="renviar-codigo">REENVIAR CÓDIGO</p>
