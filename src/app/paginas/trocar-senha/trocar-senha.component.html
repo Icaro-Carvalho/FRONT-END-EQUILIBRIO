@@ -5,7 +5,7 @@
             <h2 *ngIf="tipoTemplate != 2">Esqueci minha senha😿</h2>
             <h2 *ngIf="tipoTemplate === 2">Crie sua nova senha😸</h2>
             <p class="semi-titulo" *ngIf="tipoTemplate != 1">Lorem ipsum dolor sit amet consectetur.</p>
-            <p class="semi-titulo col-md-7" *ngIf="tipoTemplate === 1">Informe o código para a verificação do e-mail: <span class="email">{{this.email}}</span></p> 
+            <p class="semi-titulo col-md-6" *ngIf="tipoTemplate === 1">Informe o código para a verificação do e-mail: <span class="email">{{this.email}}</span></p> 
 
             <ng-container *ngIf="tipoTemplate === 0">
                 <form>
@@ -21,7 +21,7 @@
             
             <ng-container *ngIf="tipoTemplate === 1">
                 
-                    <div class="d-flex justify-content-center col-md-7">
+                    <div class="d-flex justify-content-center col-7">
                         <input type="text" class="quadrado" #input1 maxlength="1" placeholder="0">
                         <input type="text" class="quadrado" #input2 maxlength="1" placeholder="0">
                         <input type="text" class="quadrado" #input3 maxlength="1" placeholder="0">
@@ -50,14 +50,14 @@
                   </div> 
 
                   <p>Mínimo de:</p>
-                  <div class="row">
-                    <p class="col"><img class="espacamento-img" src="assets\done.svg" alt="Sinal de feito">Letra maíscula</p>
-                    <p class="col"><img class="espacamento-img" src="assets\done.svg" alt="Sinal de feito">Letra minúscula</p>
-                  </div>
-                  <div class="row">
-                    <p class="col"><img class="espacamento-img" src="assets\done.svg" alt="Sinal de feito">Caracteres</p>
-                    <p class="col"><img class="espacamento-img" src="assets\done.svg" alt="Sinal de feito">Números</p>
-                  </div>
+                    <div class="row">
+                      <p class="col"><img class="espacamento-img" src="assets\done.svg" alt="Sinal de feito">Letra maíscula</p>
+                      <p class="col"><img class="espacamento-img" src="assets\done.svg" alt="Sinal de feito">Letra minúscula</p>
+                    </div>
+                    <div class="row">
+                      <p class="col"><img class="espacamento-img" src="assets\done.svg" alt="Sinal de feito">Caracteres</p>
+                      <p class="col"><img class="espacamento-img" src="assets\done.svg" alt="Sinal de feito">Números</p>
+                    </div>
 
                   <button type="button" class="btn" >ENTRAR</button>
 
