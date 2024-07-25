@@ -1,45 +1,57 @@
-
 <div class="container">
-    <div class="row min-vh-100">
-        
+  <div class="row min-vh-100">
+
     <div class="fundo-quadrado">
+      <div>
+        <h1>Solicitações de ajustes</h1>
+      </div>
+      <div class="d-flex align-items-start">
+        <div class="input-wrapper">
+          <input type="text" placeholder="Pesquise aqui...">
+          <fa-icon [icon]="faSearch" class="cor-icon"></fa-icon>
+        </div>
+        <div class="dropdown-html">
+          <select name="empregador" id="empregador">
+            <option value="" selected disabled>Empregador</option>
+            <option value="volvo">Action</option>
+            <option value="saab">Another action</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Something else here</option>
+          </select>
+        </div>
+        <div class="dropdown-html">
+          <select name="unidade" id="unidade">
+            <option value="" selected disabled>Unidade</option>
+            <option value="volvo">Action</option>
+            <option value="saab">Another action</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Something else here</option>
+          </select>
+        </div>
+      </div>
+
+      <hr>
+
+      <div>
+        <h2>Tabela de ajuste</h2>
         <div>
-            <h1>Solicitações de ajustes</h1>
-        </div>
-        <div class="d-flex align-items-start">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Pesquise aqui..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                <img src="assets/search.svg" alt="Seta do dropdown" class="seta-dropdown">
-            </div>
-            <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Empregador
-                  <img src="assets/seta-dropdown.svg" alt="Seta do dropdown" class="seta-dropdown">
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Unidade
-                  <img src="assets/seta-dropdown.svg" alt="Seta do dropdown" class="seta-dropdown-unidade">
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </div>
-              
+          <div class="btn-group btn-group-status" role="group" aria-label="Basic example">
+            <button type="button" class="btn" [ngClass]="{ 'active': selectedStatus === 'Pendentes' }" (click)="selectStatus('Pendentes')">Pendentes</button>
+            <button type="button" class="btn" [ngClass]="{ 'active': selectedStatus === 'Aprovados' }" (click)="selectStatus('Aprovados')">Aprovados</button>
+            <button type="button" class="btn" [ngClass]="{ 'active': selectedStatus === 'Reprovados' }" (click)="selectStatus('Reprovados')">Reprovados</button>
+            <div class="indicator" [ngStyle]="{'left': indicatorPosition}"></div>
+          </div>
+
+          <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary">Todos</button>
+            <button type="button" class="btn btn-secondary">CPF</button>
+            <button type="button" class="btn btn-secondary">CNPJ</button>
+          </div>
         </div>
 
-        <hr>
-        
+      </div>
+
     </div>
-    </div>
-    
+  </div>
+
 </div>
-
