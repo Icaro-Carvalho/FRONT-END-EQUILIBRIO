@@ -1,14 +1,14 @@
 
 .fundo-quadrado{
     background-color: #FFFFFF;
-    width: 1049px;
-    height: 549px;
     border-radius: 1rem;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 3rem;
+    margin-top: 2rem;
     box-shadow: 0 0 10px  rgba(122, 122, 122, 0.1);
     padding: 0;
+    max-width: 1049px;
+    max-height: 570px;
     
 }
 
@@ -78,16 +78,19 @@ select{
 
 /*Estilo do Seletor de Status*/
 
-.btn-group-status {
-    position: relative;
-    border-radius: 120px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
+.btn-group-estilo-status{
     width: 357px;
     height: 40px;
     background-color: rgba(70, 125, 102, 0.1);
-  }
+    margin-right: 1rem;
+}
+
+.btn-group-estilo-indentificacao{
+    width: 209px;
+    height: 40px;
+    background-color: rgba(255, 162, 23, 0.1);
+    margin-right: 40px;
+}
   
   .btn{
     flex: 1;
@@ -105,7 +108,7 @@ select{
     z-index: 1;
   }
   
-  .btn-status.active, .btn.active {
+  .btn.active {
     color: white;
     font-weight: bold;
   }
@@ -120,7 +123,17 @@ select{
     background-color: #467D66;
     border-radius: 120px; 
     transform: translate(-50%, -50%); 
-    z-index: -1; 
+    z-index: -1;
+  }
+
+  .btn-indentificacao.active::after{
+    background-color: #FFA217;
+  }
+
+  .mat-mdc-table {
+    width: 100%;
+    max-height: 250px;
+    overflow: auto;
   }
 
   

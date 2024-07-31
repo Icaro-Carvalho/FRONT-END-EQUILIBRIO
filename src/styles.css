@@ -9,4 +9,15 @@
 
 *{
     font-family: "Poppins", Regular;
+    overflow: hidden;
 }
+
+.btn-group-status{
+    position: relative;
+    border-radius: 120px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
