@@ -65,10 +65,16 @@ label {
 }
 
 .margem-lateral{
-    margin-left: 8rem;
+    margin-left: 3rem;
 }
 
 .email{
     font-size: 20px;
     font-weight: bold;
+}
+
+
+.login-image {
+    height: 100vh; /* Ocupar toda a altura da tela */
+    width: 100%; /* Ajustar à largura do contêiner */
 }

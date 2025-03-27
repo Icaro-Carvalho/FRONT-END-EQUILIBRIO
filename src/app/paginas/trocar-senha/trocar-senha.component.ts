@@ -20,6 +20,18 @@ export class TrocarSenhaComponent {
     this.tipoTemplate = tipo;
   }
 
+  mudarFoco(atual: HTMLInputElement, proximo: HTMLInputElement) {
+    if (atual.value.length === 1) {
+        proximo.focus();
+    }
+  }
+
+voltarFoco(event: KeyboardEvent, anterior: HTMLInputElement) {
+    if (event.key === "Backspace" && (event.target as HTMLInputElement).value === "") {
+        anterior.focus();
+    }
+}
+
 
 
 }

@@ -40,12 +40,13 @@ label {
     margin-top: 16px;
 }
 
-.margem-lateral{
-    margin-left: 8rem;
+.margem-lateral {
+    margin-left: 3rem; 
 }
 
 .login-image {
-    max-height: 100vh; /* Limita a altura da imagem para evitar rolagem */
-    object-fit: cover; /* Mantém a proporção da imagem */
-  }
+    height: 100vh; /* Ocupar toda a altura da tela */
+    width: 100%; /* Ajustar à largura do contêiner */
+    
+}
 
