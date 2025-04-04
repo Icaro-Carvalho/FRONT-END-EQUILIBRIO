@@ -1,0 +1,29 @@
+.dashboard-content {
+    display: flex;
+    gap: 22.9px;
+    align-items: flex-start;
+}
+
+.humor-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 22.9px;
+}
+
+.humor-container {
+    display: flex;
+    gap: 22.9px;
+}
+
+.top3-wrapper {
+    display: flex;
+    gap: 22.9px;
+    flex-basis: 100px;
+}
+
+:host ::ng-deep .p-button-outlined {
+    border-width: 2px !important;
+    color: #2FBD82 !important;
+    border-color: #2FBD82 !important;
+}
+

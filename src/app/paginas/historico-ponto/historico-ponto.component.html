@@ -1,0 +1,83 @@
+<div class="container">
+
+    <div class="header-container" style="margin-bottom: 32px;">
+        <h2 class="titulo-tela">Histórico de Pontos</h2>
+        <p-button label="Gráfico de Humor" variant="outlined" icon="pi pi-chart-bar" iconPos="right" (click)="showDialog()"/>
+    </div>
+
+    <div style="margin-bottom: 32px;">
+        <div class="row align-items-center g-3">
+            <div class="col-md-2">
+                <p class="mb-1">Data</p>
+                <p-datepicker [(ngModel)]="value1" size="small" placeholder="Selecione" showIcon iconDisplay="input"/>
+            </div>
+            <div class="col-md-4">
+                <p class="mb-1">Funcionário</p>
+                <input pInputText id="username" [(ngModel)]="value" size="small" placeholder="Pesquise" class="custom-inputs"/>
+            </div>
+            <div class="col-md-3">
+                <p class="mb-1">Equipe</p>
+                <p-select [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" placeholder="Selecione" class="custom-inputs"/>
+            </div>
+            <div class="col-md-3">
+                <p class="mb-1">Sentimento</p>
+                <p-select [options]="cities" [(ngModel)]="selectedCity" optionLabel="name" placeholder="Selecione" class="custom-inputs" />
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="card">
+        <p-table
+            [value]="products"
+            [paginator]="true"
+            [rows]="5"
+            [rowsPerPageOptions]="[5, 10, 20]"
+            paginatorPosition="bottom"
+            stripedRows
+            [tableStyle]="{'min-width': '50rem'}">
+                <ng-template #header>
+                    <tr>
+                        <th>Data</th>
+                        <th>Hora Inicial</th>
+                        <th>Hora Final</th>
+                        <th>Funcionário</th>
+                        <th>Equipe</th>
+                        <th>Sentimento</th>
+                    </tr>
+                </ng-template>
+                <ng-template #body let-product>
+                    <tr>
+                        <td>{{product.code}}</td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.category}}</td>
+                        <td>{{product.quantity}}</td>
+                    </tr>
+                </ng-template>
+        </p-table>
+    </div>
+
+
+</div>
+
+
+
+<p-dialog header="Gráfico de Humor" [modal]="true" [(visible)]="visible" [style]="{ width: '40rem'}">
+    <div class="mb-3 d-flex gap-3 align-items-center">
+        <div>
+            <p class="mb-1">De</p>
+            <p-datepicker [(ngModel)]="value1" size="small" placeholder="Selecione" showIcon iconDisplay="input"/>
+        </div>
+        <div>
+            <p class="mb-1">Até</p>
+            <p-datepicker [(ngModel)]="value1" size="small" placeholder="Selecione" showIcon iconDisplay="input"/>
+        </div>
+    </div>
+    
+    
+    <p-chart type="bar" [data]="basicData" [options]="basicOptions" />
+    
+</p-dialog>
+
+
+

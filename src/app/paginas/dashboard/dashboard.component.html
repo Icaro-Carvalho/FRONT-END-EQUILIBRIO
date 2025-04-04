@@ -1,0 +1,94 @@
+<div class="container">
+
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="titulo-tela">Dashboard</h2>
+        <p-splitbutton label="Criar" dropdownIcon="pi pi-plus" [model]="items" size="small"></p-splitbutton>
+    </div>
+
+    <div class="dashboard-content">
+        <div class="humor-wrapper">
+            <div class="humor-container">
+                <app-modulo-dashboard-humor
+                    status="Estressado"
+                    [quantidade]="08"
+                    imgSrc="assets/humor-estressado.png">
+                </app-modulo-dashboard-humor>
+                <app-modulo-dashboard-humor
+                    status="Estressado"
+                    [quantidade]="08"
+                    imgSrc="assets/humor-estressado.png">
+                </app-modulo-dashboard-humor>
+            </div>
+
+            <div class="humor-container">
+                <app-modulo-dashboard-humor
+                    status="Estressado"
+                    [quantidade]="08"
+                    imgSrc="assets/humor-estressado.png">
+                </app-modulo-dashboard-humor>
+                <app-modulo-dashboard-humor
+                    status="Estressado"
+                    [quantidade]="08"
+                    imgSrc="assets/humor-estressado.png">
+                </app-modulo-dashboard-humor>
+            </div>
+
+            <app-modulo-dashboard-humor
+                status="Estressado"
+                [quantidade]="08"
+                imgSrc="assets/humor-estressado.png"
+                cardWidth="445px">
+            </app-modulo-dashboard-humor>
+        </div>
+
+        <div class="top3-wrapper">
+            <app-modulo-top3
+                situacao="Equipes desanimadas"
+                [quantidade]="20"
+                imgSrc="assets/equipe-desanimada.png"
+                afetado="equipes"
+                [equipes]="listaDeEquipes">
+            </app-modulo-top3>
+
+            <app-modulo-top3
+                situacao="Total Burnout"
+                [quantidade]="10"
+                imgSrc="assets/equipe-desanimada.png"
+                afetado="funcionários"
+                [equipes]="listaDeEquipes">
+            </app-modulo-top3>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-between align-items-center" style="margin-top: 40px; margin-bottom: 24px;">
+        <h2 class="titulo-tela">Tabela de Burnout</h2>
+        <p-button label="Ver mais" variant="outlined" size="small"/>
+    </div>
+
+    <div class="card">
+        <p-table
+            [value]="products"
+            [rows]="4"
+            stripedRows
+            [tableStyle]="{'min-width': '50rem'}">
+                <ng-template #header>
+                    <tr>
+                        <th>Funcionario</th>
+                        <th>Equipe</th>
+                        <th>Sentimento</th>
+                        <th>Ações</th>
+                    </tr>
+                </ng-template>
+                <ng-template #body let-product>
+                    <tr>
+                        <td>{{product.code}}</td>
+                        <td>{{product.name}}</td>
+                        <td>{{product.category}}</td>
+                        <td>{{product.code}}</td>
+                    </tr>
+                </ng-template>
+        </p-table>
+    </div>
+
+
+</div>

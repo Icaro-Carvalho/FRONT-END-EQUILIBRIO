@@ -75,6 +75,15 @@ label {
 
 
 .login-image {
-    height: 100vh; /* Ocupar toda a altura da tela */
-    width: 100%; /* Ajustar à largura do contêiner */
+    height: 100vh; 
+    width: 100%; 
 }
+
+.verde {
+    color: green;
+    font-weight: bold;
+  }
+  
+  .verde img {
+    filter: brightness(0) saturate(100%) invert(45%) sepia(95%) saturate(523%) hue-rotate(85deg) brightness(90%) contrast(95%);
+  }

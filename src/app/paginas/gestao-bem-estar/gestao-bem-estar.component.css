@@ -1,0 +1,28 @@
+.toggle-container {
+    display: flex;
+    gap: 10px;
+}
+
+.toggle-btn {
+    padding: 4px 10px;
+    border: 2px solid #2FBD81;
+    border-radius: 20px;
+    background-color: transparent;
+    color: #2FBD81;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.toggle-btn.active {
+    background-color: #2FBD81;
+    color: white;
+}
+
+.custom-inputs {
+    width: 100%;
+}
+
+.container {
+    padding-bottom: 32px;
+}

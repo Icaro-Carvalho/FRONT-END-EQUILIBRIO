@@ -1,0 +1,13 @@
+<div class="card">
+    <img [src]="imgSrc" alt="Emoji para sinalizar {{ situacao }}">
+    <h2>{{ situacao }}: {{ quantidade }}</h2>
+    <p>Top 03 {{ afetado }} que precisam de atenção</p>
+    
+    <div *ngFor="let equipe of equipes; let i = index">
+        <div class="team-item">
+            <span [ngClass]="{'orange': equipe.cor === 'orange', 'red': equipe.cor === 'red'}"></span>
+            <p>{{ equipe.nome }}</p>
+        </div>
+        <hr *ngIf="i < equipes.length - 1" class="divider">
+    </div>
+</div>

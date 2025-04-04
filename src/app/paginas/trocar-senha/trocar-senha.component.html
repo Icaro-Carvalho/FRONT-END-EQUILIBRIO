@@ -11,28 +11,28 @@
                 <form>
                     <div class="form-group">
                       <label for="email">E-mail</label>
-                      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" aria-describedby="emailHelp"
+                      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email"
                         placeholder="Digite seu email">
                     </div>         
-                    <button type="button" class="btn" (click)="mudarTipoTemplate(1)">ENVIAR</button>
-                    <button type="button" class="btn-voltar">VOLTAR</button>
+                    <button type="button" class="btn" (click)="enviarCodigo()" [disabled]="!emailValido()">ENVIAR</button>
+                    <button type="button" class="btn-voltar" routerLink="/login">VOLTAR</button>
                 </form>
             </ng-container>
             
             <ng-container *ngIf="tipoTemplate === 1">
                 
               <div class="d-flex justify-content-center col-11">
-                <input type="text" class="quadrado" #input1 maxlength="1" placeholder="0" (input)="mudarFoco(input1, input2)">
-                <input type="text" class="quadrado" #input2 maxlength="1" placeholder="0" (input)="mudarFoco(input2, input3)" (keydown)="voltarFoco($event, input1)">
-                <input type="text" class="quadrado" #input3 maxlength="1" placeholder="0" (input)="mudarFoco(input3, input4)" (keydown)="voltarFoco($event, input2)">
-                <input type="text" class="quadrado" #input4 maxlength="1" placeholder="0" (keydown)="voltarFoco($event, input3)">
+                <input type="text" class="quadrado" #input1 maxlength="1" placeholder="0" (input)="mudarFoco(input1, input2); pegarCodigo(input1, input2, input3, input4)">
+                <input type="text" class="quadrado" #input2 maxlength="1" placeholder="0" (input)="mudarFoco(input2, input3); pegarCodigo(input1, input2, input3, input4)" (keydown)="voltarFoco($event, input1)">
+                <input type="text" class="quadrado" #input3 maxlength="1" placeholder="0" (input)="mudarFoco(input3, input4); pegarCodigo(input1, input2, input3, input4)" (keydown)="voltarFoco($event, input2)">
+                <input type="text" class="quadrado" #input4 maxlength="1" placeholder="0" (input)="pegarCodigo(input1, input2, input3, input4)"  (keydown)="voltarFoco($event, input3)">
               </div>
 
               <div class="d-flex justify-content-center col-md-11">
-                <p class="renviar-codigo">REENVIAR CÓDIGO</p>
+                <p class="renviar-codigo" (click)="enviarCodigo()" style="cursor: pointer;">REENVIAR CÓDIGO</p>
               </div>
                     
-              <button type="button" class="btn" (click)="mudarTipoTemplate(2)">PRÓXIMO</button>
+              <button type="button" class="btn" (click)="validarCodigo()">PRÓXIMO</button>
               <button type="button" class="btn-voltar" (click)="mudarTipoTemplate(0)" >VOLTAR</button>
                 
                 
@@ -42,25 +42,25 @@
 
                 <div class="form-group">
                     <label for="novaSenha">Nova senha</label>
-                    <input type="password" class="form-control" id="novaSenha" aria-describedby="emailHelp"
+                    <input type="password" class="form-control" id="novaSenha" name="novaSenha" [(ngModel)]="novaSenha" (input)="validarSenha()"
                       placeholder="ex: @1234Pm">
 
                     <label for="repitaNovaSenha">Repita a senha</label>
-                    <input type="password" class="form-control" id="repitaNovaSenha" aria-describedby="emailHelp"
+                    <input type="password" class="form-control" id="repitaNovaSenha" name="repitaNovaSenha" [(ngModel)]="repitaNovaSenha" 
                       placeholder="ex: @1234Pm">
                   </div> 
 
                   <p>Mínimo de:</p>
                     <div class="row">
-                      <p class="col"><img class="espacamento-img" src="assets\done.svg" alt="Sinal de feito">Letra maíscula</p>
-                      <p class="col"><img class="espacamento-img" src="assets\done.svg" alt="Sinal de feito">Letra minúscula</p>
+                      <p class="col" [ngClass]="{'verde': temMaiuscula}"><img class="espacamento-img" src="assets\done.svg" alt="Sinal de feito" [ngClass]="{'verde': temMaiuscula}">Letra maíscula</p>
+                      <p class="col" [ngClass]="{'verde': temMinuscula}"><img class="espacamento-img" src="assets\done.svg" alt="Sinal de feito" [ngClass]="{'verde': temMinuscula}">Letra minúscula</p>
                     </div>
                     <div class="row">
-                      <p class="col"><img class="espacamento-img" src="assets\done.svg" alt="Sinal de feito">Caracteres</p>
-                      <p class="col"><img class="espacamento-img" src="assets\done.svg" alt="Sinal de feito">Números</p>
+                      <p class="col" [ngClass]="{'verde': temCaractere}"><img class="espacamento-img" src="assets\done.svg" alt="Sinal de feito" [ngClass]="{'verde': temCaractere}">Caracteres</p>
+                      <p class="col" [ngClass]="{'verde': temNumero}"><img class="espacamento-img" src="assets\done.svg" alt="Sinal de feito" [ngClass]="{'verde': temNumero}">Números</p>
                     </div>
 
-                  <button type="button" class="btn" >ENTRAR</button>
+                  <button type="button" class="btn" (click)="trocarSenha()" [disabled]="!senhaValida()">ENTRAR</button>
 
                   
             </ng-container>
@@ -73,3 +73,5 @@
     </div>
     
 </div>
+
+<p-toast />
